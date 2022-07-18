@@ -21,7 +21,7 @@
 						class="w-full h-full flex items-center space-x-2 justify-end text-xs capitalize tracking-wide font-medium"
 					>
 						<li
-							class="cursor-pointer text-neutral-400 border px-4 py-1 grid place-content-center rounded-md"
+							class="cursor-pointer text-neutral-400 border px-4 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
 							id="clear-btn"
 						>
 							clear
@@ -40,11 +40,13 @@
 						</li>
 					</ul>
 				</section>
+
 				<section
 					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
-					id="title-input"
+					id="title-container"
 				>
 					<input
+						id="title-input"
 						type="text"
 						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
 						placeholder="product title"
@@ -52,12 +54,22 @@
 				</section>
 				<section
 					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
-					id="inBox-input"
+					id="mpn-container"
+				>
+					<input
+						id="mpn-input"
+						type="text"
+						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
+						placeholder="MPN"
+					/>
+				</section>
+				<section
+					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
 				>
 					<input
 						type="text"
 						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
-						placeholder="in the box"
+						placeholder="GTIN"
 					/>
 				</section>
 			</div>

@@ -11,11 +11,11 @@
   </head>
   <body>
     <div class="bg-transparent">
-        <div class=" absolute right-2 top-2 flex flex-col items-center justify-center p-0 bg-transparent box-border border rounded-lg">
+        <div class=" absolute right-2 top-2 flex flex-col items-center justify-center p-0 bg-transparent box-border border rounded-lg h-fit">
 
-            <section class=" h-fit font-satoshi w-52 rounded-md py-2 px-3  bg-white">
+            <section class=" h-fit font-satoshi w-56 rounded-md py-2 px-3  bg-white">
                 <ul class="w-full h-full flex  items-center space-x-2 justify-end   text-xs capitalize tracking-wide font-medium ">
-                    <li class="cursor-pointer text-neutral-400 border hover:border-black h-6 w-6 grid place-content-center rounded-md  hover:text-black">
+                    <li class="cursor-pointer text-neutral-400 border hover:border-black h-6 w-6 grid place-content-center rounded-md  hover:text-black" id="title-btn">
                         <i class="ph-tag-bold  text-sm"></i>
                     </li>     
                     <li class="cursor-pointer text-neutral-400 border hover:border-black h-6 w-6 grid place-content-center rounded-md  hover:text-black">
@@ -23,10 +23,11 @@
                     </li>  
                 </ul>
             </section>
-            <section class="mt-0 w-fit h-fit rounded-md   p-2" id="title-input">
-                <input type="text" class="w-52 capitalize placeholder:text-neutral-300  rounded-md px-4 focus:outline-none py-2 text-sm " placeholder="product title">
-                
-                
+            <section class="mt-0 w-52 overflow-hidden grid place-content-center h-12  p-2" id="title-input">
+                <input type="text" class="w-52 capitalize placeholder:text-neutral-300  rounded-md px-4 py-2 text-xs focus:outline-none border" placeholder="product title">
+            </section>
+            <section class="mt-0 w-52 overflow-hidden grid place-content-center h-12  p-2">
+                <input type="text" class="w-52 capitalize placeholder:text-neutral-300  rounded-md px-4 py-2 text-xs focus:outline-none border" placeholder="in the box">
             </section>
         </div>
     </div>

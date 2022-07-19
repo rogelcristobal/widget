@@ -135,13 +135,17 @@ ${content}
 	});
 
 	// save funtion
-	copy.addEventListener("click", () => {
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+
 		titleContainer.style.display = "none";
 		barContainer.style.display = "none";
-		barContainer.style.display = "none";
+		descContainer.style.display = "none";
 		toggleTitle = false;
 		toggleMPN = false;
-		toggleGTN = false;
+		toggleDesc = false;
+
 		titleBtn.style.border = "1px rgb(212, 212, 212) solid";
 		titleBtn.style.color = "rgb(115, 115, 115)";
 		titleBtn.style.backgroundColor = "inherit";

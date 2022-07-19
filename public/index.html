@@ -12,49 +12,57 @@
     />
   </head>
   <body>
-    <div class="bg-transparent">
-      <div
-        class="absolute right-2 top-2 flex flex-col items-center justify-center bg-transparent box-border border rounded-lg h-fit space-y-0 border-neutral-400"
+    <div class="bg-neutral-50   w-fit h-fit">
+      <form
+		id="form"
+        class="relative flex flex-col items-center justify-center  box-border  h-fit space-y-0 "
       >
         <section
-          class="h-fit font-satoshi w-full rounded-md py-2 px-3 bg-white"
+          class="h-fit font-satoshi w-full rounded-md py-2 px-3 "
         >
+          <p class="text-xs capitalize mb-2 font-medium text-neutral-400">
+            description
+          </p>
+		  <!-- toggles -->
           <ul
             class="w-full h-full flex items-center space-x-2 justify-end text-xs capitalize tracking-wide font-medium"
           >
             <li
-              class="cursor-pointer text-neutral-400 border px-4 border-neutral-400 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
+              class="cursor-pointer text-neutral-50 border px-4 py-1 grid place-content-center rounded-md hover:text-white hover:bg-sky-600 bg-sky-500"
               id="copy-btn"
             >
               copy
             </li>
             <li
-              class="cursor-pointer text-neutral-400 border px-4 border-neutral-400 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
+              class="cursor-pointer text-neutral-50 border px-4 py-1 grid place-content-center rounded-md hover:text-white hover:bg-sky-600 bg-sky-500"
               id="clear-btn"
             >
               clear
             </li>
             <li
-              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              class="cursor-pointer text-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
               id="title-btn"
             >
               <i class="ph-tag-bold text-sm"></i>
             </li>
             <li
-              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              class="cursor-pointer text-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
               id="bar-btn"
             >
               <i class="ph-barcode-bold text-sm"></i>
             </li>
             <li
-              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
-              id="description-btn"
+              class="cursor-pointer text-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              id="desc-btn"
             >
               <i class="ph-file-text-bold text-sm"></i>
             </li>
           </ul>
         </section>
 
+
+		<!-- inputs -->
+		<!-- title -->
         <section
           class="mt-0 w-full hidden place-content-center h-12 p-2 relative"
           id="title-container"
@@ -62,37 +70,44 @@
           <input
             id="title-input"
             type="text"
-            class="w-60 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+            class="w-60 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
             placeholder="product title"
-			required
+            required
           />
         </section>
-        <div class="hidden grid-cols-2 w-60 gap-2"  id="bar-container">
-          <section
-            class="mt-0 w-full grid place-content-center h-12 relative "
-           
-          >
+		<!-- bars -->
+        <div class="hidden grid-cols-2 w-60 gap-2" id="bar-container">
+			<!-- mpn -->
+          <section class="mt-0 w-full grid place-content-center h-12 relative">
             <input
               id="mpn-input"
               type="text"
-              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
               placeholder="MPN"
-			  required
+              required
             />
           </section>
-          <section
-            class="mt-0 w-full grid place-content-center h-12  relative"
-           
-          >
+		  <!-- gtn -->
+          <section class="mt-0 w-full grid place-content-center h-12 relative">
             <input
               id="gtn-input"
               type="text"
-              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
               placeholder="GTN"
             />
           </section>
         </div>
-      </div>
+		<!-- descriptions -->
+        <section class="mt-0 w-full hidden items-center justify-center px-2 h-12 absolute -bottom-16 border "
+		id="desc-container">
+          <input
+            id="desc-input"
+            type="text"
+            class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
+            placeholder="description"
+          />
+        </section>
+      </form>
     </div>
     <script src="index.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>

@@ -1,9 +1,9 @@
 {
   let toggleTitle = false;
   let toggleMPN = false;
-  let toggleGTN = false;
+  let toggleDesc = false;
 
-  const description = ({title,mpn,gtn,content,OB}) => {
+  const description = ({title,mpn,gtn,content}) => {
    
     return `
         <style>
@@ -57,17 +57,18 @@ ${content}
 
 <p></p>
 <ul class="mpn">
-<li>MPN - ${OB ? `${mpn}OB`:mpn }</li>
+<li>MPN - ${mpn}</li>
 <li>GTN - ${gtn? gtn: 'TBA'}</li>
 </ul>
         
         `;
   };
-
+  const form = document.querySelector("#form")
   const titleContainer = document.querySelector("#title-container");
   const barContainer = document.querySelector("#bar-container");
+  const descContainer = document.querySelector('#desc-container')
   // btns
-  const descBtn = document.querySelector("#description-btn");
+  const descBtn = document.querySelector("#desc-btn");
   const barBtn = document.querySelector("#bar-btn");
   const titleBtn = document.querySelector("#title-btn");
   const clr = document.querySelector("#clear-btn");
@@ -77,6 +78,7 @@ ${content}
   const inputTitle = document.querySelector("#title-input");
   const mpn = document.querySelector("#mpn-input");
   const gtn = document.querySelector("#gtn-input");
+  const desc =document.querySelector('#desc-input')
 
   // functions
   titleBtn.addEventListener("click", () => {
@@ -106,24 +108,25 @@ ${content}
       toggleMPN = false;
     }
   });
-//   descBtn.addEventListener("click", () => {
-//     if (!toggleGTN) {
-//       gtnContainer.style.display = "grid";
-//       descBtn.style.borderColor = "black";
-//       descBtn.style.color = "black";
-//       toggleGTN = true;
-//     } else {
-//       gtnContainer.style.display = "none";
-//       descBtn.style.borderColor = " rgb(163, 163, 163)";
-//       descBtn.style.color = " rgb(163, 163, 163)";
-//       toggleGTN = false;
-//     }
-//   });
+  descBtn.addEventListener("click", () => {
+    if (!toggleDesc) {
+      descContainer.style.display = "flex";
+      descBtn.style.borderColor = "black";
+      descBtn.style.color = "black";
+      toggleDesc = true;
+    } else {
+      descContainer.style.display = "none";
+      descBtn.style.borderColor = " rgb(163, 163, 163)";
+      descBtn.style.color = " rgb(163, 163, 163)";
+      toggleDesc = false;
+    }
+  });
   clr.addEventListener("click", () => {
     inputTitle.value = "";
     mpn.value = "";
     gtn.value = "";
   });
+  
   // save funtion
   copy.addEventListener("click", () => {
     titleContainer.style.display = "none";
@@ -137,10 +140,11 @@ ${content}
     barBtn.style.borderColor = " rgb(163, 163, 163)";
     barBtn.style.color = " rgb(163, 163, 163)";
 
-    navigator.clipboard.writeText(description(inputTitle.value,mpn.value,gtn.value,));
+    navigator.clipboard.writeText(description(inputTitle.value,mpn.value,gtn.value,desc.value));
     inputTitle.value = "";
     mpn.value =""
-    gtn.value="'"
+    gtn.value=""
+    desc.value =""
     
     copy.textContent="copied!"
     const copiedText = setTimeout(()=>{

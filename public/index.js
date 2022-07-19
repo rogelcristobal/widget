@@ -1,11 +1,10 @@
 {
-  let toggleTitle = false;
-  let toggleMPN = false;
-  let toggleDesc = false;
+	let toggleTitle = false;
+	let toggleMPN = false;
+	let toggleDesc = false;
 
-  const description = ({title,mpn,gtn,content}) => {
-   
-    return `
+	const description = (title, mpn, gtn, content) => {
+		return `
         <style>
         h2.h2Lit {padding-block-start: 0.6rem;margin-block-end: 0.5rem;}
         .gText h2, .gText3 h2, .gText4 h2, .gText5 h2 {line-height:0.7;}
@@ -58,100 +57,113 @@ ${content}
 <p></p>
 <ul class="mpn">
 <li>MPN - ${mpn}</li>
-<li>GTN - ${gtn? gtn: 'TBA'}</li>
+<li>GTN - ${gtn ? gtn : "TBA"}</li>
 </ul>
         
         `;
-  };
-  const form = document.querySelector("#form")
-  const titleContainer = document.querySelector("#title-container");
-  const barContainer = document.querySelector("#bar-container");
-  const descContainer = document.querySelector('#desc-container')
-  // btns
-  const descBtn = document.querySelector("#desc-btn");
-  const barBtn = document.querySelector("#bar-btn");
-  const titleBtn = document.querySelector("#title-btn");
-  const clr = document.querySelector("#clear-btn");
-  const copy = document.querySelector("#copy-btn");
+	};
 
-  // input field
-  const inputTitle = document.querySelector("#title-input");
-  const mpn = document.querySelector("#mpn-input");
-  const gtn = document.querySelector("#gtn-input");
-  const desc =document.querySelector('#desc-input')
+	const form = document.querySelector("#form");
+	const titleContainer = document.querySelector("#title-container");
+	const barContainer = document.querySelector("#bar-container");
+	const descContainer = document.querySelector("#desc-container");
+	// btns
+	const descBtn = document.querySelector("#desc-btn");
+	const barBtn = document.querySelector("#bar-btn");
+	const titleBtn = document.querySelector("#title-btn");
+	const clr = document.querySelector("#clear-btn");
+	const copy = document.querySelector("#copy-btn");
 
-  // functions
-  titleBtn.addEventListener("click", () => {
-    if (!toggleTitle) {
-      titleContainer.style.display = "grid";
-      titleBtn.style.borderColor = "black";
-      titleBtn.style.color = "black";
-      toggleTitle = true;
-    } else {
-      titleContainer.style.display = "none";
-      titleBtn.style.borderColor = " rgb(163, 163, 163)";
-      titleBtn.style.color = " rgb(163, 163, 163)";
-      toggleTitle = false;
-    }
-  });
+	// input field
+	const inputTitle = document.querySelector("#title-input");
+	const mpn = document.querySelector("#mpn-input");
+	const gtn = document.querySelector("#gtn-input");
+	const desc = document.querySelector("#desc-input");
 
-  barBtn.addEventListener("click", () => {
-    if (!toggleMPN) {
-      barContainer.style.display = "grid";
-      barBtn.style.borderColor = "black";
-      barBtn.style.color = "black";
-      toggleMPN = true;
-    } else {
-      barContainer.style.display = "none";
-      barBtn.style.borderColor = " rgb(163, 163, 163)";
-      barBtn.style.color = " rgb(163, 163, 163)";
-      toggleMPN = false;
-    }
-  });
-  descBtn.addEventListener("click", () => {
-    if (!toggleDesc) {
-      descContainer.style.display = "flex";
-      descBtn.style.borderColor = "black";
-      descBtn.style.color = "black";
-      toggleDesc = true;
-    } else {
-      descContainer.style.display = "none";
-      descBtn.style.borderColor = " rgb(163, 163, 163)";
-      descBtn.style.color = " rgb(163, 163, 163)";
-      toggleDesc = false;
-    }
-  });
-  clr.addEventListener("click", () => {
-    inputTitle.value = "";
-    mpn.value = "";
-    gtn.value = "";
-  });
-  
-  // save funtion
-  copy.addEventListener("click", () => {
-    titleContainer.style.display = "none";
-    barContainer.style.display = "none";
-    barContainer.style.display = "none";
-    toggleTitle = false;
-    toggleMPN = false;
-    toggleGTN = false;
-    titleBtn.style.borderColor = " rgb(163, 163, 163)";
-    titleBtn.style.color = " rgb(163, 163, 163)";
-    barBtn.style.borderColor = " rgb(163, 163, 163)";
-    barBtn.style.color = " rgb(163, 163, 163)";
+	// functions
+	titleBtn.addEventListener("click", () => {
+		if (!toggleTitle) {
+			titleBtn.style.border = "none";
+			titleBtn.style.color = "white";
+			titleBtn.style.backgroundColor = "rgb(14, 165, 233)";
+			titleContainer.style.display = "grid";
+			toggleTitle = true;
+		} else {
+			titleBtn.style.border = "1px rgb(212, 212, 212) solid";
+			titleBtn.style.color = "rgb(115, 115, 115)";
+			titleBtn.style.backgroundColor = "inherit";
+			titleContainer.style.display = "grid";
+			titleContainer.style.display = "none";
+			toggleTitle = false;
+		}
+	});
 
-    navigator.clipboard.writeText(description(inputTitle.value,mpn.value,gtn.value,desc.value));
-    inputTitle.value = "";
-    mpn.value =""
-    gtn.value=""
-    desc.value =""
-    
-    copy.textContent="copied!"
-    const copiedText = setTimeout(()=>{
-        copy.textContent = "copy"
-    }, 4000)
-    copiedText()
-    clearTimeout(copiedText)
+	barBtn.addEventListener("click", () => {
+		if (!toggleMPN) {
+			barBtn.style.border = "none";
+			barBtn.style.color = "white";
+			barBtn.style.backgroundColor = "rgb(14, 165, 233)";
+			barContainer.style.display = "grid";
+			toggleMPN = true;
+		} else {
+			barBtn.style.border = "1px rgb(212, 212, 212) solid";
+			barBtn.style.color = "rgb(115, 115, 115)";
+			barBtn.style.backgroundColor = "inherit";
+			barContainer.style.display = "none";
+			toggleMPN = false;
+		}
+	});
+	descBtn.addEventListener("click", () => {
+		if (!toggleDesc) {
+			descBtn.style.border = "none";
+			descBtn.style.color = "white";
+			descBtn.style.backgroundColor = "rgb(14, 165, 233)";
+			descContainer.style.display = "flex";
+			toggleDesc = true;
+		} else {
+			descBtn.style.border = "1px rgb(212, 212, 212) solid";
+			descBtn.style.color = "rgb(115, 115, 115)";
+			descBtn.style.backgroundColor = "inherit";
+			descContainer.style.display = "none";
+			toggleDesc = false;
+		}
+	});
+	clr.addEventListener("click", () => {
+		inputTitle.value = "";
+		mpn.value = "";
+		gtn.value = "";
+	});
 
-});
+	// save funtion
+	copy.addEventListener("click", () => {
+		titleContainer.style.display = "none";
+		barContainer.style.display = "none";
+		barContainer.style.display = "none";
+		toggleTitle = false;
+		toggleMPN = false;
+		toggleGTN = false;
+		titleBtn.style.border = "1px rgb(212, 212, 212) solid";
+		titleBtn.style.color = "rgb(115, 115, 115)";
+		titleBtn.style.backgroundColor = "inherit";
+		barBtn.style.border = "1px rgb(212, 212, 212) solid";
+		barBtn.style.color = "rgb(115, 115, 115)";
+		barBtn.style.backgroundColor = "inherit";
+		descBtn.style.border = "1px rgb(212, 212, 212) solid";
+		descBtn.style.color = "rgb(115, 115, 115)";
+		descBtn.style.backgroundColor = "inherit";
+		navigator.clipboard.writeText(
+			description(inputTitle.value, mpn.value, gtn.value, desc.value)
+		);
+		inputTitle.value = "";
+		mpn.value = "";
+		gtn.value = "";
+		desc.value = "";
+
+		copy.textContent = "copied!";
+		const copiedText = setTimeout(() => {
+			copy.textContent = "copy";
+		}, 4000);
+		copiedText();
+		clearTimeout(copiedText);
+	});
 }

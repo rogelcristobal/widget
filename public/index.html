@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>HTML 5 Boilerplate</title>
-		<link rel="stylesheet" href="output.css" />
-		<link
-			href="https://api.fontshare.com/v2/css?f[]=outfit@400,900,800,300,500,600,200,100,700&f[]=satoshi@900,700,500,300,400&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div class="bg-transparent">
-			<div
-				class="absolute right-2 top-2 flex flex-col items-center justify-center p-0 bg-transparent box-border border rounded-lg h-fit"
-			>
-				<section class="h-fit font-satoshi w-56 rounded-md py-2 px-3 bg-white">
-					<ul
-						class="w-full h-full flex items-center space-x-2 justify-end text-xs capitalize tracking-wide font-medium"
-					>
-						<li
-							class="cursor-pointer text-neutral-400 border px-4 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
-							id="clear-btn"
-						>
-							clear
-						</li>
-						<li
-							class="cursor-pointer text-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
-							id="title-btn"
-						>
-							<i class="ph-tag-bold text-sm"></i>
-						</li>
-						<li
-							class="cursor-pointer text-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
-							id="inBox-btn"
-						>
-							<i class="ph-cube-bold text-sm"></i>
-						</li>
-					</ul>
-				</section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=outfit@400,900,800,300,500,600,200,100,700&f[]=satoshi@900,700,500,300,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-transparent">
+      <div
+        class="absolute right-2 top-2 flex flex-col items-center justify-center bg-transparent box-border border rounded-lg h-fit space-y-0 border-neutral-400"
+      >
+        <section
+          class="h-fit font-satoshi w-full rounded-md py-2 px-3 bg-white"
+        >
+          <ul
+            class="w-full h-full flex items-center space-x-2 justify-end text-xs capitalize tracking-wide font-medium"
+          >
+            <li
+              class="cursor-pointer text-neutral-400 border px-4 border-neutral-400 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
+              id="copy-btn"
+            >
+              copy
+            </li>
+            <li
+              class="cursor-pointer text-neutral-400 border px-4 border-neutral-400 py-1 grid place-content-center rounded-md hover:text-black hover:border-black"
+              id="clear-btn"
+            >
+              clear
+            </li>
+            <li
+              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              id="title-btn"
+            >
+              <i class="ph-tag-bold text-sm"></i>
+            </li>
+            <li
+              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              id="bar-btn"
+            >
+              <i class="ph-barcode-bold text-sm"></i>
+            </li>
+            <li
+              class="cursor-pointer text-neutral-400 border-neutral-400 border h-6 w-6 grid place-content-center rounded-md"
+              id="description-btn"
+            >
+              <i class="ph-file-text-bold text-sm"></i>
+            </li>
+          </ul>
+        </section>
 
-				<section
-					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
-					id="title-container"
-				>
-					<input
-						id="title-input"
-						type="text"
-						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
-						placeholder="product title"
-					/>
-				</section>
-				<section
-					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
-					id="mpn-container"
-				>
-					<input
-						id="mpn-input"
-						type="text"
-						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
-						placeholder="MPN"
-					/>
-				</section>
-				<section
-					class="mt-0 w-52 overflow-hidden hidden place-content-center h-12 p-2"
-				>
-					<input
-						type="text"
-						class="w-52 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border"
-						placeholder="GTIN"
-					/>
-				</section>
-			</div>
-		</div>
-		<script src="index.js"></script>
-		<script src="https://unpkg.com/phosphor-icons"></script>
-	</body>
+        <section
+          class="mt-0 w-full hidden place-content-center h-12 p-2 relative"
+          id="title-container"
+        >
+          <input
+            id="title-input"
+            type="text"
+            class="w-60 capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+            placeholder="product title"
+			required
+          />
+        </section>
+        <div class="hidden grid-cols-2 w-60 gap-2"  id="bar-container">
+          <section
+            class="mt-0 w-full grid place-content-center h-12 relative "
+           
+          >
+            <input
+              id="mpn-input"
+              type="text"
+              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+              placeholder="MPN"
+			  required
+            />
+          </section>
+          <section
+            class="mt-0 w-full grid place-content-center h-12  relative"
+           
+          >
+            <input
+              id="gtn-input"
+              type="text"
+              class="w-full capitalize placeholder:text-neutral-300 rounded-md px-4 py-2 text-xs focus:outline-none border border-neutral-400"
+              placeholder="GTN"
+            />
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </body>
 </html>
